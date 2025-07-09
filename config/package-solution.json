@@ -1,0 +1,40 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "focus-links-client-side-solution",
+    "id": "6e7d9985-e221-4740-ae37-5ff95ac9b85d",
+    "version": "1.0.0.0",
+    "includeClientSideAssets": true,
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "developer": {
+      "name": "",
+      "websiteUrl": "",
+      "privacyUrl": "",
+      "termsOfUseUrl": "",
+      "mpnId": "Undefined-1.21.1"
+    },
+    "metadata": {
+      "shortDescription": {
+        "default": "focus-links description"
+      },
+      "longDescription": {
+        "default": "focus-links description"
+      },
+      "screenshotPaths": [],
+      "videoUrl": "",
+      "categories": []
+    },
+    "features": [
+      {
+        "title": "focus-links Feature",
+        "description": "The feature that activates elements of the focus-links solution.",
+        "id": "dfc14aba-502f-4e0c-95da-ea8a71fd2fd8",
+        "version": "1.0.0.0"
+      }
+    ]
+  },
+  "paths": {
+    "zippedPackage": "solution/focus-links.sppkg"
+  }
+}

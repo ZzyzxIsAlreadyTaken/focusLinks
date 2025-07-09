@@ -1,0 +1,18 @@
+{
+  "@microsoft/generator-sharepoint": {
+    "plusBeta": false,
+    "isCreatingSolution": true,
+    "nodeVersion": "22.15.0",
+    "sdksVersions": {},
+    "version": "1.21.1",
+    "libraryName": "focus-links",
+    "libraryId": "6e7d9985-e221-4740-ae37-5ff95ac9b85d",
+    "environment": "spo",
+    "packageManager": "npm",
+    "solutionName": "focus-links",
+    "solutionShortDescription": "focus-links description",
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "componentType": "webpart"
+  }
+}

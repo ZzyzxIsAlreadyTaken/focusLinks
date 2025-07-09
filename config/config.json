@@ -1,0 +1,18 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "focus-links-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/focusLinks/FocusLinksWebPart.js",
+          "manifest": "./src/webparts/focusLinks/FocusLinksWebPart.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "FocusLinksWebPartStrings": "lib/webparts/focusLinks/loc/{locale}.js"
+  }
+}
