@@ -1,0 +1,23 @@
+.linkCardWrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5em;
+}
+
+.linkCardColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+}
+
+.linkCardGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1em;
+}
+
+.linkCardList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25em;
+}

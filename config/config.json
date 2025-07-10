@@ -13,6 +13,7 @@
   },
   "externals": {},
   "localizedResources": {
-    "FocusLinksWebPartStrings": "lib/webparts/focusLinks/loc/{locale}.js"
+    "FocusLinksWebPartStrings": "lib/webparts/focusLinks/loc/{locale}.js",
+    "PropertyControlStrings": "node_modules/@pnp/spfx-property-controls/lib/loc/{locale}.js"
   }
 }
