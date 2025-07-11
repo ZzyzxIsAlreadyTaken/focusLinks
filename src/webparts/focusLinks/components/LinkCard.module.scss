@@ -2,20 +2,20 @@
   display: flex;
   align-items: center;
   background: #fff;
-  border: 1px solid #c8c6c4;
+  border: 1px solid #000;
   border-radius: 6px;
   padding: 0.75em 1.25em;
   margin: 0.5em 0;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
   transition: box-shadow 0.2s, border-color 0.2s;
   text-decoration: none;
-  color: inherit;
+  color: #000;
   min-width: 220px;
   max-width: 346px;
 
   &:hover,
   &:focus {
-    border-color: #0078d4;
+    border-color: var(--link);
     box-shadow: 0 2px 8px rgba(0, 120, 212, 0.1);
     text-decoration: none;
     outline: none;
@@ -28,7 +28,7 @@
   justify-content: center;
   margin-right: 1em;
   font-size: 1.5em;
-  color: #0078d4;
+  color: var(--link);
 }
 
 .linkText {
@@ -37,4 +37,17 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  color: #000;
+}
+
+.links {
+  a {
+    text-decoration: none;
+    color: var(--link);
+
+    &:hover {
+      text-decoration: underline;
+      color: var(--linkHovered);
+    }
+  }
 }

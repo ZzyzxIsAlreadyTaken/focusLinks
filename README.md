@@ -2,9 +2,13 @@
 
 ## Summary
 
-Short summary on functionality and used technologies.
+A SharePoint Framework web part that displays quick links in various layouts. The web part can display both example links and links from a selected SharePoint list, providing a flexible way to showcase important resources and links to users.
 
-[picture of the solution in action, if possible]
+**Key Features:**
+
+- Display quick links in multiple layout options (wrap, grid, list, single column)
+- Connect to SharePoint lists to display dynamic content
+- Responsive design with Fluent UI icons
 
 ## Used SharePoint Framework Version
 
@@ -52,13 +56,41 @@ Short summary on functionality and used technologies.
 
 ## Features
 
-Description of the extension that expands upon high-level summary above.
+The Focus Links web part provides a comprehensive solution for displaying quick links and resources in SharePoint pages. Here's what it offers:
 
-This extension illustrates the following concepts:
+### Core Functionality
 
-- topic 1
-- topic 2
-- topic 3
+- **Multiple Layout Options**: Choose from wrap, grid, list, or single column layouts to best fit your page design
+- **SharePoint List Integration**: Connect to any SharePoint list to display dynamic content
+- **Example Links**: Built-in example links for testing and demonstration purposes
+- **Responsive Design**: Automatically adapts to different screen sizes and devices
+
+### User Experience
+
+- **Fluent UI Icons**: Uses Microsoft's Fluent UI icon system for consistent visual design
+- **Theme Support**: Automatically adapts to light and dark themes
+- **Accessibility**: Built with accessibility in mind, including proper ARIA labels
+- **External Link Handling**: Opens links in new tabs with proper security attributes
+
+### SharePoint Integration
+
+- **PnP/SPFx Integration**: Uses PnP (Patterns and Practices) for SharePoint data access
+- **List Picker**: Easy selection of SharePoint lists through the property pane
+- **Real-time Data**: Fetches and displays current list items
+- **Error Handling**: Graceful handling of connection and data loading errors
+
+### Teams Support
+
+- **Microsoft Teams Integration**: Works seamlessly within Teams tabs
+- **Multi-environment Support**: Functions in SharePoint, Teams, Office, and Outlook
+
+This web part illustrates the following SharePoint Framework concepts:
+
+- Property pane configuration with custom controls
+- SharePoint data access using PnP
+- React component development
+- Theme integration
+- Teams context awareness
 
 > Notice that better pictures and documentation will increase the sample usage and the value you are providing for others. Thanks for your submissions advance.
 

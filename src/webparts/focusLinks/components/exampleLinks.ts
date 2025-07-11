@@ -20,4 +20,14 @@ export const exampleLinks: ExampleLink[] = [
     title: "Join our Teams Channel",
     url: "https://teams.microsoft.com/",
   },
+  {
+    iconName: "Calendar",
+    title: "Calendar",
+    url: "https://contoso.com/calendar",
+  },
+  {
+    iconName: "Contact",
+    title: "Contact Us",
+    url: "https://contoso.com/contact",
+  },
 ];

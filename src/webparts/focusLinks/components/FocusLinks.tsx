@@ -1,29 +1,26 @@
 import * as React from "react";
+import { useState, useEffect } from "react";
 import styles from "./FocusLinks.module.scss";
 import type { IFocusLinksProps, ILink } from "./IFocusLinksProps";
-import { escape } from "@microsoft/sp-lodash-subset";
 import { exampleLinks } from "./exampleLinks";
 import { LinkCardList } from "./LinkCardList";
 import { getListItems } from "../services/PnPConnection";
+import { DisplayMode } from "@microsoft/sp-core-library";
+import LinkForm from "./LinkForm";
+import { PrimaryButton } from "@fluentui/react";
 
-const FocusLinks: React.FC<IFocusLinksProps> = (props) => {
-  const {
-    description,
-    isDarkTheme,
-    environmentMessage,
-    hasTeamsContext,
-    userDisplayName,
-    layout,
-    selectedList,
-    context,
-  } = props;
+const FocusLinks = (props: IFocusLinksProps): JSX.Element => {
+  const { hasTeamsContext, layout, selectedList, context, displayMode } = props;
 
-  const [listLinks, setListLinks] = React.useState<ILink[]>([]);
-  const [isLoading, setIsLoading] = React.useState(false);
-  const [error, setError] = React.useState<string | null>(null);
+  const [listLinks, setListLinks] = useState<ILink[]>([]);
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  const [linkFormIsOpen, setLinkFormIsOpen] = useState(false);
+  const activeTest = false;
 
+  const editMode = displayMode === DisplayMode.Edit;
   // Fetch items from the selected list
-  React.useEffect(() => {
+  useEffect(() => {
     const fetchListItems = async (): Promise<void> => {
       if (!selectedList || !context) {
         setListLinks([]);
@@ -63,34 +60,28 @@ const FocusLinks: React.FC<IFocusLinksProps> = (props) => {
     <section
       className={`${styles.focusLinks} ${hasTeamsContext ? styles.teams : ""}`}
     >
-      <div className={styles.welcome}>
-        <img
-          alt=""
-          src={
-            isDarkTheme
-              ? require("../assets/welcome-dark.png")
-              : require("../assets/welcome-light.png")
-          }
-          className={styles.welcomeImage}
-        />
-        <h2>Well done, {escape(userDisplayName)}!</h2>
-        <div>{environmentMessage}</div>
-        <div>
-          Web part property value: <strong>{escape(description)}</strong>
-        </div>
-      </div>
-
+      {editMode && (
+        <PrimaryButton onClick={() => setLinkFormIsOpen(true)}>
+          Add New Link
+        </PrimaryButton>
+      )}
+      <LinkForm
+        isOpen={linkFormIsOpen}
+        onDismiss={() => {
+          setLinkFormIsOpen(false);
+        }}
+      />
       {/* Example LinkCards for testing */}
-      <div>
-        <h3>Example Quick Links</h3>
-        <LinkCardList links={exampleLinks} layout={layout} />
-      </div>
-
+      {!selectedList && (
+        <div>
+          <h3>Example Quick Links</h3>
+          <LinkCardList links={exampleLinks} layout={layout} />
+        </div>
+      )}
       {/* Display items from selected list */}
       {selectedList && (
         <div>
-          <h3>Links from: {selectedList.title}</h3>
-          {console.log("Lenke liste", listLinks)}
+          <h3>{props.title}</h3>
           {isLoading && <p>Loading...</p>}
           {error && <p style={{ color: "red" }}>{error}</p>}
           {!isLoading && !error && listLinks.length > 0 && (
@@ -102,8 +93,8 @@ const FocusLinks: React.FC<IFocusLinksProps> = (props) => {
         </div>
       )}
 
-      {/* Display selected list information */}
-      {selectedList && (
+      {/* DEBUG INFORMATION - Display selected list information */}
+      {selectedList && activeTest && (
         <div>
           <h3>Selected List</h3>
           <p>List ID: {selectedList.id}</p>

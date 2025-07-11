@@ -1,3 +1,4 @@
+import { DisplayMode } from "@microsoft/sp-core-library";
 import { WebPartContext } from "@microsoft/sp-webpart-base";
 
 export interface ISelectedList {
@@ -14,7 +15,7 @@ export interface ILink {
 }
 
 export interface IFocusLinksProps {
-  description: string;
+  title: string;
   isDarkTheme: boolean;
   environmentMessage: string;
   hasTeamsContext: boolean;
@@ -22,4 +23,5 @@ export interface IFocusLinksProps {
   layout: "single" | "wrap" | "grid" | "list";
   selectedList: ISelectedList | null;
   context: WebPartContext;
+  displayMode: DisplayMode;
 }

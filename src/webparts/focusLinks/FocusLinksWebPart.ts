@@ -15,7 +15,7 @@ import FocusLinks from "./components/FocusLinks";
 import { IFocusLinksProps, ISelectedList } from "./components/IFocusLinksProps";
 
 export interface IFocusLinksWebPartProps {
-  description: string;
+  title: string;
   layout: "single" | "wrap" | "grid" | "list";
   selectedList: ISelectedList | null;
 }
@@ -28,7 +28,7 @@ export default class FocusLinksWebPart extends BaseClientSideWebPart<IFocusLinks
     const element: React.ReactElement<IFocusLinksProps> = React.createElement(
       FocusLinks,
       {
-        description: this.properties.description,
+        title: this.properties.title,
         isDarkTheme: this._isDarkTheme,
         environmentMessage: this._environmentMessage,
         hasTeamsContext: !!this.context.sdks.microsoftTeams,
@@ -36,6 +36,7 @@ export default class FocusLinksWebPart extends BaseClientSideWebPart<IFocusLinks
         layout: this.properties.layout || "wrap",
         selectedList: this.properties.selectedList || null,
         context: this.context,
+        displayMode: this.displayMode,
       }
     );
 
@@ -125,10 +126,10 @@ export default class FocusLinksWebPart extends BaseClientSideWebPart<IFocusLinks
           },
           groups: [
             {
-              groupName: strings.BasicGroupName,
+              groupName: "Settings",
               groupFields: [
-                PropertyPaneTextField("description", {
-                  label: strings.DescriptionFieldLabel,
+                PropertyPaneTextField("title", {
+                  label: "Title",
                 }),
                 PropertyPaneDropdown("layout", {
                   label: "Layout",
